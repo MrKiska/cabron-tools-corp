@@ -2,7 +2,7 @@ from random import randint
 import lib.statusBar
 import time
 import curses
-
+import os
 
 def main(anim: bool,names: list, first: str, second: str):
     stdscr = curses.initscr()
@@ -46,6 +46,8 @@ def main(anim: bool,names: list, first: str, second: str):
             stdscr.addstr("init success, starting AI to perform this task\n")
             stdscr.refresh()
             curses.endwin()
+            if os.getenv('LANG')[:2] == "ru":
+                print("gadaem na kopheinoy gusche")
             print("result:",sep="")
             for k in range(0,len(names)): 
                 time.sleep(0.5)               
